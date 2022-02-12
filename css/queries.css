@@ -1,0 +1,312 @@
+@media (max-width: 59em) {
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  h2 {
+    font-size: 2.6rem;
+    text-align: center;
+  }
+
+  .form-input {
+    width: 18rem;
+  }
+
+  .about-body p {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 51em) {
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  .subscribe-section {
+    padding: 8.8rem;
+  }
+
+  .form {
+    display: grid;
+    row-gap: 2.8rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+  }
+
+  .form li:last-child {
+    grid-column: 2/3;
+  }
+
+  .form-input {
+    width: 20rem;
+  }
+
+  .album-gallery {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .album-artwork {
+    width: 80%;
+  }
+
+  .video-gallery {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 41em) {
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  .form {
+    display: grid;
+    row-gap: 2.8rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+  }
+
+  .form li:nth-child(3) {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  .form li:last-child {
+    grid-column: 1/3;
+    grid-row: 3/4;
+  }
+
+  .form-input {
+    width: 20rem;
+  }
+
+  .about-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .promo-photo {
+    float: none;
+  }
+
+  .contact-item {
+    font-size: 1.4rem;
+  }
+
+  footer span {
+    font-size: 0.8rem;
+  }
+
+  .contact-section {
+    padding: 6rem 6rem 6.4rem 5rem;
+  }
+
+  .footer {
+    padding: 6.4rem 4rem 6.4rem 4rem;
+  }
+}
+
+/*
+FOR MOBILE
+*/
+
+@media (max-width: 35em) {
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-logo {
+    width: 34rem;
+    cursor: pointer;
+  }
+  .nav-pages li {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .icon {
+    height: 2.4rem;
+    width: 2.4rem;
+  }
+
+  .header-text {
+    font-size: 2.2rem;
+  }
+
+  .section-header {
+    position: static;
+    margin: 4rem auto;
+  }
+
+  .about-body p {
+    font-size: 1.6rem;
+  }
+
+  .music-section {
+    padding: 6.4rem 6rem 6.4rem 6rem;
+  }
+
+  footer span {
+    font-size: 0.6rem;
+  }
+
+  .contact-section {
+    padding: 6rem 6rem 6.4rem 5rem;
+  }
+
+  .footer {
+    padding: 6.4rem 4rem 6.4rem 4rem;
+  }
+}
+
+@media (max-width: 29em) {
+  .contact-header {
+    font-size: 3.4rem;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.8rem;
+  }
+
+  .form-input {
+    width: 26rem;
+  }
+
+  .video-section {
+    padding: 6.4rem 6rem 6.4rem 6rem;
+  }
+
+  .music-section {
+    padding: 6.4rem 6rem 6.4rem 6rem;
+  }
+
+  .album-artwork {
+    width: 100%;
+  }
+
+  .promo-photo {
+    width: 26rem;
+  }
+
+  .about-body p {
+    font-size: 1.6rem;
+  }
+
+  .contact-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-item {
+    font-size: 1.6rem;
+  }
+
+  .footer {
+    padding: 6.4rem 6rem 6.4rem 6rem;
+  }
+}
+
+@media (max-width: 27em) {
+  .contact-header {
+    font-size: 3.4rem;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+
+  .header-logo {
+    width: 28rem;
+    cursor: pointer;
+  }
+  .nav-pages li {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .icon {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .header-text {
+    font-size: 1.8rem;
+  }
+
+  .music-section {
+    padding: 6.4rem 6rem 6.4rem 6rem;
+  }
+
+  .btn {
+    font-size: 1.8rem;
+    padding: 1rem;
+  }
+
+  .listen-btn::after {
+    width: 6.9rem;
+  }
+
+  .buy-btn::after {
+    width: 9.2rem;
+  }
+
+  .about-section {
+    padding: 6.4rem 6rem 6.4rem 6rem;
+  }
+
+  .contact-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-item {
+    font-size: 1.6rem;
+  }
+
+  .footer {
+    padding: 6.4rem 4rem 6.4rem 4rem;
+  }
+
+  .logo-footer {
+    height: 40%;
+    width: 40%;
+  }
+}

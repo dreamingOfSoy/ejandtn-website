@@ -1,0 +1,512 @@
+/*
+****************************************
+COMMON SECTION
+****************************************
+*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.4rem #6e94ce;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  color: #f0f2e6;
+}
+
+h1 {
+  font-family: 'rockwell', sans-serif;
+  font-size: 3.6rem;
+}
+
+h2 {
+  font-family: 'rockwell', sans-serif;
+  font-size: 3rem;
+}
+
+h3 {
+  font-family: 'rockwell', sans-serif;
+  font-size: 2rem;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  text-decoration: none;
+  color: #6e95ce;
+  transform: scale(1.05);
+}
+
+.section-seperator::after {
+  content: '';
+  width: 90%;
+  position: absolute;
+  bottom: 0;
+  border-bottom: 0.1rem solid rgba(240, 242, 230, 0.603);
+}
+
+.grid--2-cols {
+  display: grid;
+  gap: 3.6rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid--3-cols {
+  display: grid;
+  gap: 3.6rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*
+BUTTONS
+*/
+
+.btn,
+.btn:link,
+.btn:active {
+  font-family: inherit;
+  font-size: 2rem;
+  padding: 1.2rem;
+  border: none;
+  background-color: transparent;
+  color: #f0f2e6;
+  border-bottom: 0.2rem solid #f0f2e6;
+  cursor: pointer;
+
+  position: relative;
+
+  transition: all 0.3s;
+}
+
+.btn:hover,
+.btn:visited {
+  transform: scale(1.05);
+}
+
+/*
+****************************************
+HEADER/HERO SECTION
+****************************************
+*/
+
+.container {
+  margin: 0 auto;
+}
+
+header {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.3),
+      rgba(34, 34, 34, 0.3)
+    ),
+    url(../imgs/Because\ im\ a\ giantai-art\ only\ 2.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.section-header {
+  position: absolute;
+  top: 8rem;
+  left: 8rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-logo {
+  width: 38rem;
+  cursor: pointer;
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav-pages {
+  list-style: none;
+
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-pages li {
+  font-size: 2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nav-icons {
+  list-style: none;
+
+  display: flex;
+  gap: 2rem;
+}
+
+.icon {
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+}
+
+.icon-link:link,
+.icon-link:visited {
+  display: inline-block;
+  color: #f0f2e6;
+  transition: all 0.3s;
+}
+
+.icon-link:hover,
+.icon-link:active {
+  color: #f0f2e6;
+
+  transform: scale(1.05);
+}
+
+.header-container-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-text {
+  font-family: 'rockwell', sans-serif;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.listen-btn {
+  padding: 1.2rem 2.4rem 1.2rem 2.4rem;
+}
+
+.listen-btn::after {
+  content: '';
+  width: 10.2rem;
+  height: 0.2rem;
+  background-color: #f0f2e6;
+
+  position: absolute;
+  bottom: -0.8rem;
+  left: 0;
+
+  transition: all 0.3s;
+}
+
+.listen-btn:hover::after {
+  transform: translateY(-0.6rem);
+  /* z-index: -1; */
+}
+
+.buy-btn::after {
+  content: '';
+  width: 10.4rem;
+  height: 0.2rem;
+  background-color: #f0f2e6;
+
+  position: absolute;
+  bottom: -0.8rem;
+  left: 0;
+
+  transition: all 0.3s;
+}
+
+.buy-btn:hover::after {
+  transform: translateY(-0.6rem);
+}
+
+/*
+****************************************
+SUBSCRIBE SECTION
+****************************************
+*/
+
+.subscribe-section {
+  padding: 9.8rem;
+  background-color: #090d16;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.form {
+  list-style: none;
+  margin-bottom: 1.2rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.form-input {
+  padding: 1.4rem;
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 600;
+  width: 22rem;
+  border: none;
+}
+
+.form-input::placeholder {
+  color: rgba(9, 13, 22, 0.377);
+}
+
+.subscribe-btn {
+  padding: 1rem 4.8rem;
+  border: 0.2rem solid #f0f2e6;
+
+  transition: all 0.3s;
+}
+
+.subscribe-btn:hover {
+  padding: 1rem 4.8rem;
+  color: #090d16;
+  background-color: #f0f2e6;
+  border: 0.2rem solid #f0f2e6;
+}
+
+.sub-icon {
+  height: 2rem;
+  width: 2rem;
+}
+
+/*
+****************************************
+TOUR SECTION
+****************************************
+*/
+
+.tour-section {
+  padding: 6.4rem 9.8rem 0rem 9.8rem;
+  background-color: #090d16;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.bit-widget-container {
+  align-self: normal;
+}
+
+.tour-header {
+  text-align: center;
+}
+
+.bit-widget-container {
+  align-self: center;
+}
+
+/*
+****************************************
+MUSIC SECTION
+****************************************
+*/
+
+.music-section {
+  padding: 6.4rem 9.8rem 6.4rem 9.8rem;
+  background-color: #090d16;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.album-gallery {
+  width: 100%;
+}
+
+.art-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.album-title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.album-date {
+  font-size: 1.4rem;
+}
+
+.album-artwork {
+  width: 100%;
+  box-shadow: 2px 2px 12px -1px hsla(0, 0%, 0%, 0.774);
+}
+
+/*
+****************************************
+VIDEO SECTION
+****************************************
+*/
+
+.video-section {
+  padding: 6.4rem 9.8rem 6.4rem 9.8rem;
+  background-color: #090d16;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.video-gallery {
+  width: 100%;
+}
+
+.video-box {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.video-thumb {
+  width: 100%;
+  box-shadow: 2px 2px 12px -1px hsla(0, 0%, 0%, 0.774);
+}
+
+.video-icon {
+  display: inline-block;
+  height: 6rem;
+  width: 6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*
+****************************************
+ABOUT SECTION
+****************************************
+*/
+
+.about-section {
+  padding: 6.4rem 9.8rem 6.4rem 9.8rem;
+  background-color: #090d16;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.promo-photo {
+  float: left;
+  margin: 0 2.4rem 2.4rem 0;
+  box-shadow: 2px 2px 12px -1px hsla(0, 0%, 0%, 0.774);
+  width: 32rem;
+}
+
+.about-body {
+  max-width: 100%;
+}
+
+.about-body p {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+/*
+****************************************
+CONTECT SECTION
+****************************************
+*/
+
+.contact-section {
+  padding: 6.4rem 9.8rem 6.4rem 9.8rem;
+  background-color: #090d16;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.contact-body {
+  width: 100%;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.contact-items a {
+  text-align: center;
+}
+
+.contact-item {
+  font-size: 1.6rem;
+}
+
+/*
+****************************************
+FOOTER SECTION
+****************************************
+*/
+
+.footer {
+  padding: 6.4rem 9.8rem 6.4rem 9.8rem;
+  background-color: #090d16;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo-footer {
+  height: 40%;
+  width: 40%;
+}
+
+footer span {
+  text-align: end;
+}
