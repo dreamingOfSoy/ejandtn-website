@@ -15,6 +15,61 @@
   .about-body p {
     font-size: 1.8rem;
   }
+
+  .btn-mobile-nav {
+    display: block;
+    z-index: 9999;
+  }
+
+  .sticky-nav-pages {
+    background-color: rgba(9, 13, 22, 0.89);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    transition: all 0.5s ease-in;
+
+    /* Hide navigation */
+    /* Allows NO transitions at all */
+    /* display: none; */
+
+    /* 1) Hide it visually */
+    opacity: 0;
+
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+
+  .nav-open .sticky-nav-pages {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .sticky-nav-link {
+    font-size: 3rem;
+  }
+
+  .nav-open .icon-mobile-nav[name='close-outline'] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name='menu-outline'] {
+    display: none;
+  }
 }
 
 @media (max-width: 51em) {
@@ -106,10 +161,6 @@
     font-size: 1.4rem;
   }
 
-  footer span {
-    font-size: 0.8rem;
-  }
-
   .contact-section {
     padding: 6rem 6rem 6.4rem 5rem;
   }
@@ -177,7 +228,7 @@ FOR MOBILE
   }
 
   footer span {
-    font-size: 0.6rem;
+    font-size: 1rem;
   }
 
   .contact-section {
@@ -186,6 +237,11 @@ FOR MOBILE
 
   .footer {
     padding: 6.4rem 4rem 6.4rem 4rem;
+  }
+
+  .logo-footer {
+    height: 40%;
+    width: 40%;
   }
 }
 
@@ -238,7 +294,7 @@ FOR MOBILE
   }
 
   .footer {
-    padding: 6.4rem 6rem 6.4rem 6rem;
+    padding: 6.4rem 4rem 6.4rem 4rem;
   }
 }
 
@@ -308,5 +364,9 @@ FOR MOBILE
   .logo-footer {
     height: 40%;
     width: 40%;
+  }
+
+  footer span {
+    font-size: 0.8rem;
   }
 }

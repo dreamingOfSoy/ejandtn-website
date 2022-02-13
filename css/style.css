@@ -35,7 +35,7 @@ h1 {
 
 h2 {
   font-family: 'rockwell', sans-serif;
-  font-size: 3rem;
+  font-size: 2.8rem;
 }
 
 h3 {
@@ -247,6 +247,71 @@ header {
 
 /*
 ****************************************
+STICKY NAV
+****************************************
+*/
+
+.display {
+  transform: translateX(0);
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8rem;
+  padding: 2.4rem;
+  background-color: rgba(9, 13, 22, 0.89);
+  z-index: 999;
+  transform: translateX(-100%);
+  transition: all 0.5s ease-in;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.display {
+  transform: translateX(0);
+}
+
+.sticky-nav-logo {
+  width: 24rem;
+  cursor: pointer;
+}
+
+.sticky-nav-link:link,
+.sticky-nav-link:visited {
+  color: #f0f2e6;
+}
+
+.sticky-nav-link:hover,
+.sticky-nav-link:active {
+  color: #6e95ce;
+}
+
+/* MOBILE NAV */
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #f0f2e6;
+}
+
+.icon-mobile-nav[name='close-outline'] {
+  display: none;
+}
+
+/*
+****************************************
 SUBSCRIBE SECTION
 ****************************************
 */
@@ -358,6 +423,7 @@ MUSIC SECTION
   flex-direction: column;
   align-items: center;
   gap: 1.8rem;
+  cursor: pointer;
 }
 
 .album-title {
@@ -372,6 +438,142 @@ MUSIC SECTION
 .album-artwork {
   width: 100%;
   box-shadow: 2px 2px 12px -1px hsla(0, 0%, 0%, 0.774);
+}
+
+/*
+****************************************
+MUSIC MODAL SECTION
+****************************************
+*/
+
+.album-modal {
+  padding: 6rem;
+  background-color: #f0f2e66b;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-body {
+  padding: 6rem;
+  width: 90%;
+  height: 100%;
+  background-color: #090d16;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.album-modal-btns {
+  margin-bottom: 6rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.close-modal {
+  justify-self: flex-start;
+  cursor: pointer;
+}
+
+.album-modal-btn {
+  width: 20%;
+  border: 0.2rem solid;
+}
+
+.album {
+  justify-items: center;
+}
+
+.album-artwork-modal {
+  align-self: start;
+  width: 40rem;
+}
+
+.tracklist {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tracklist ol {
+  margin-left: 2.6rem;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.title-date {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.credits {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  grid-column: 2/3;
+}
+
+.credits ul {
+  list-style: none;
+  font-size: 1.6rem;
+  line-height: 3rem;
+}
+
+.desc {
+  grid-column: 1/3;
+}
+
+.desc p {
+  width: 100%;
+  padding: 2rem;
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+
+.desc-modal {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.desc-modal p {
+  width: 100%;
+  padding: 2rem;
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+
+.desc a:link,
+.desc a:visited {
+  color: inherit;
+}
+
+.desc a:hover,
+.desc a:active {
+  color: #6e94ce;
 }
 
 /*
@@ -503,10 +705,21 @@ FOOTER SECTION
 }
 
 .logo-footer {
-  height: 40%;
-  width: 40%;
+  height: 30%;
+  width: 30%;
 }
 
 footer span {
+  max-width: 40%;
   text-align: end;
+}
+
+/*
+****************************************
+IMPORTANT
+****************************************
+*/
+
+.nodisplay {
+  display: none !important;
 }

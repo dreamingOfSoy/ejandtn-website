@@ -21,20 +21,30 @@
   </head>
   <body>
     <div class="container">
-      <header>
+      <header class="header">
         <div class="section-header">
           <nav class="main-nav">
-            <img
-              src="imgs/ejandtn-logo.png"
-              alt="Elijah James And The Nightmares logo"
-              class="header-logo"
-            />
+            <!-- link-scroll class is to make the smooth scrolling work (check script.js) -->
+            <a href="#" class="link-scroll">
+              <img
+                src="imgs/ejandtn-logo.png"
+                alt="Elijah James And The Nightmares logo"
+                class="header-logo"
+            /></a>
             <ul class="nav-pages">
-              <li><a class="link" href="#">Tour</a></li>
-              <li><a class="link" href="#">Music</a></li>
-              <li><a class="link" href="#">Videos</a></li>
-              <li><a class="link" href="#">About</a></li>
-              <li><a class="link" href="#">Shop</a></li>
+              <li><a class="link link-scroll" href="#tour">Tour</a></li>
+              <li><a class="link link-scroll" href="#music">Music</a></li>
+              <li><a class="link link-scroll" href="#videos">Videos</a></li>
+              <li><a class="link link-scroll" href="#about">About</a></li>
+              <li>
+                <a
+                  class="link"
+                  href="https://www.atomicmammothrecords.com/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Shop</a
+                >
+              </li>
             </ul>
 
             <ul class="nav-icons">
@@ -78,12 +88,57 @@
                 'Becuase I'm A Giant' <br />
                 Out Now
               </div>
-              <a href="#"><button class="btn listen-btn">Listen</button></a>
-              <a href="#"><button class="btn buy-btn">Buy Here</button></a>
+              <a href="#music"
+                ><button class="btn listen-btn">Listen</button></a
+              >
+              <a
+                href="https://www.atomicmammothrecords.com/product/because-i-m-a-giant-double-vinyl-lp"
+                target="_blank"
+                rel="noreferrer noopener"
+                ><button class="btn buy-btn">Buy Here</button></a
+              >
             </div>
           </div>
         </div>
       </header>
+
+      <nav class="sticky-nav">
+        <a href="#" class="link-scroll"
+          ><img
+            src="imgs/ejandtn-logo.png"
+            alt="Elijah James And The Nightmares logo"
+            class="sticky-nav-logo"
+        /></a>
+        <ul class="nav-pages sticky-nav-pages">
+          <li>
+            <a class="link link-scroll sticky-nav-link" href="#tour">Tour</a>
+          </li>
+          <li>
+            <a class="link link-scroll sticky-nav-link" href="#music">Music</a>
+          </li>
+          <li>
+            <a class="link link-scroll sticky-nav-link" href="#videos"
+              >Videos</a
+            >
+          </li>
+          <li>
+            <a class="link link-scroll sticky-nav-link" href="#about">About</a>
+          </li>
+          <li>
+            <a
+              class="link sticky-nav-link"
+              href="https://www.atomicmammothrecords.com/"
+              target="_blank"
+              rel="noreferrer noopener"
+              >Shop</a
+            >
+          </li>
+        </ul>
+        <button class="btn-mobile-nav">
+          <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+          <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+        </button>
+      </nav>
 
       <section class="subscribe-section section-seperator">
         <h1 class="form-header">Subscribe</h1>
@@ -141,7 +196,7 @@
         </ul>
       </section>
 
-      <section class="tour-section section-seperator">
+      <section class="tour-section section-seperator" id="tour">
         <h1 class="tour-header">Tour</h1>
 
         <script
@@ -164,7 +219,7 @@
         ></a>
       </section>
 
-      <section class="music-section section-seperator">
+      <section class="music-section section-seperator" id="music">
         <h1 class="music-header">Music</h1>
 
         <div class="album-gallery grid--3-cols">
@@ -197,120 +252,387 @@
           </div>
         </div>
       </section>
-    </div>
 
-    <section class="video-section section-seperator">
-      <h1 class="video-header">Videos</h1>
-      <div class="video-gallery grid--2-cols">
-        <div class="video-box">
-          <img
-            class="video-thumb"
-            src="imgs/BIAG-thumb.png"
-            alt="Thumbnail for Because I'm A Giant Video"
-          />
-          <ion-icon class="video-icon" name="play-circle-outline"></ion-icon>
-        </div>
-        <div class="video-box">
-          <img
-            class="video-thumb"
-            src="imgs/EP-thumb.png"
-            alt="Thumbnail for It's Too Late Now To Say: Two Songs EP Video"
-          /><ion-icon class="video-icon" name="play-circle-outline"></ion-icon>
-        </div>
-        <div class="video-box">
-          <img
-            class="video-thumb"
-            src="imgs/hate-it-here-thumb.png"
-            alt="Thumbnail for I Hate It Here But You Are Here And I Love You Single Video"
-          /><ion-icon class="video-icon" name="play-circle-outline"></ion-icon>
-        </div>
-        <div class="video-box">
-          <img
-            class="video-thumb"
-            src="imgs/on-a-stage-thumb.png"
-            alt="Thumbnail for On A Stage Single Video"
-          /><ion-icon class="video-icon" name="play-circle-outline"></ion-icon>
-        </div>
-      </div>
-    </section>
+      <aside class="album-modal nodisplay">
+        <div class="modal-body nodisplay" data-modal="0">
+          <div class="modal-header">
+            <div class="album-modal-btns">
+              <button class="btn album-modal-btn">Stream</button>
+              <button class="btn album-modal-btn">Buy</button>
+            </div>
+            <div class="close-modal">
+              <ion-icon class="icon-mobile-nav" name="close"></ion-icon>
+            </div>
+          </div>
 
-    <section class="about-section container section-seperator">
-      <h1 class="about-header">About</h1>
-      <div class="about-body">
-        <img
-          class="promo-photo"
-          src="imgs/promophoto.jpeg"
-          alt="Promo photograph
+          <div class="album grid--2-cols">
+            <div class="img-title-date">
+              <img
+                class="album-artwork-modal"
+                src="imgs/Ep cover 1.png"
+                alt="Elijah James And The Nightares Album Art of It's Too Late Now To Say: Two Songs EP"
+              />
+              <div class="title-date">
+                <span class="album-title"
+                  >It's Too Late Now To Say: Two Songs</span
+                >
+                <span class="album-date">June 26, 2020</span>
+              </div>
+            </div>
+            <div class="tracklist">
+              <h2>Tracklist:</h2>
+              <ol>
+                <li>Who'll Be Here Tomorrow?</li>
+                <li>Enough Rope</li>
+              </ol>
+            </div>
+
+            <div class="credits">
+              <h2>Credits</h2>
+              <ul>
+                <li>
+                  All song written arranged and recorded by E. J. Mainwaring
+                </li>
+                <li>Mixed & Mastered by Tom Roach</li>
+              </ul>
+            </div>
+            <div class="desc">
+              <p>
+                In May 2020, Elijah James And The Nightmares were set to record
+                their sophomore LP. Alas, due to the Covid-19 pandemic, their
+                plans - like everybody else's - were put on hold. Instead,
+                Elijah James Mainwaring took to creating this short film,
+                featuring two acoustic versions of songs from said upcoming LP:
+                1. Who'll Be Here Tomorrow? 2. Enough Rope The two songs were
+                recorded in his flat in Liverpool, UK, with the virtual help of
+                <a href="https://www.tomroach.co.uk"> Tom Roach</a>, whom
+                engineered, mixed and mastered the two song EP.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-body nodisplay" data-modal="1">
+          <div class="modal-header">
+            <div class="album-modal-btns">
+              <button class="btn album-modal-btn">Stream</button>
+              <button class="btn album-modal-btn">Buy</button>
+            </div>
+            <div class="close-modal">
+              <ion-icon class="icon-mobile-nav" name="close"></ion-icon>
+            </div>
+          </div>
+
+          <div class="album grid--2-cols">
+            <div class="img-title-date">
+              <img
+                class="album-artwork-modal"
+                src="imgs/Because im a giant-1-Web.png"
+                alt="Elijah James And The Nightares Album Art of Because I'm A Giant LP"
+              />
+              <div class="title-date">
+                <span class="album-title">Because I'm A Giant LP</span>
+                <span class="album-date">September 6, 2019</span>
+              </div>
+            </div>
+            <div class="tracklist">
+              <h2>Tracklist:</h2>
+              <ol>
+                <span>Side A</span>
+                <li>I Hate It Here, But You Are Here, And I Love You</li>
+                <li>Spirits & Ghosts</li>
+                <li>Cut Me Down</li>
+                <li>To Sue, Too Soon</li>
+                <span>Side B</span>
+                <li>Movie In Your Eyes</li>
+                <li>Talisman</li>
+                <li>There's Everything Else, And Then There's You</li>
+                <li>Patricia's March</li>
+                <li>Mayfly (One Last Perfect Day)</li>
+                <span>Side C</span>
+                <li>On A Stage</li>
+                <li>Beyond The Horizon</li>
+                <li>Theme Music For A Princess</li>
+                <li>Scared Of Everything</li>
+                <li>A Most Unwelcome Encounter</li>
+                <span>Side D</span>
+                <li>My Misery and Me</li>
+                <li>Daydreaming</li>
+                <li>Andy's Song</li>
+                <li>Man-Made Masquerade</li>
+              </ol>
+            </div>
+            <div class="credits">
+              <h2>Credits</h2>
+              <ul>
+                <li>
+                  All song written, arranged, and produced by E. J. Mainwaring
+                </li>
+                <li>
+                  Recorded by Tom Roach and E. J. Mainwaring at Elevator Studios
+                  and Nightmare Studios
+                </li>
+                <li>
+                  Drums recorded at Canvas Sound with thanks to Connor Dickson
+                </li>
+                <li>Mixed by Tom Roach</li>
+                <li>Mastered by Tom Woodhead</li>
+                <li>
+                  James Cudworth - Electric Guitar on track 1, 2, 4, 5, 9,
+                  Saxophone on track 1, 18, Clarinet on track 1, 10, Flute on
+                  track 1, 10, Banjo on track 7, Mandolin on track 1, Synth on
+                  track 18, Bass on track 15, Drums on track 4, 14, Percussion
+                  on tracks 1, 2, 3, 4, 5, 6, 10, 13, 14, Djembe on track 2
+                </li>
+                <li>
+                  Simon Bill Gelling - Electric Guitar on track 1, 2, 4, 5, 6,
+                  10, 18, Backing Vocals on track 1, 4, 5, 13, 18
+                </li>
+                <li>Matt Kearon - Bass on track 18</li>
+                <li>
+                  Emily Vanlint - Violin on track 1, 2, 4, 5, 6, 10, 13, 14, 18,
+                  Viola on tracks 1, 2, 4, 5, 10, 13, 14
+                </li>
+                <li>
+                  Rachel Wharton - Tenor Horn on tracks 1, 2, 5, 6, 10, 14, 18
+                </li>
+                <li>
+                  Nathanial Gamsu - Piano on tracks 1, 2, 4, 5, 6, 10, 14, 18,
+                  Organ on tracks 3, 13
+                </li>
+                <li>Luke Moore - Cello on tracks 1, 2, 4, 7</li>
+                <li>Matthew Jones - Cornet on tracks 1, 5</li>
+                <li>
+                  Josh Betley - Trumpet on tracks - 6, 14, Cornet on track 14,
+                  Flugelhorn on track 14
+                </li>
+                <li>Gareth Dawson - Drums on tracks 1, 2, 3, 5, 6, 10, 18</li>
+                <li>John Mac - Bass on track 4</li>
+                <li>Jenny Coyle - Backing Vocals on tracks 3, 5, 13, 14, 15</li>
+                <li>art direction and design by Elijah James</li>
+                <li>illustration and graphic design by Jonathon Tottey</li>
+              </ul>
+            </div>
+            <div class="desc-modal">
+              <p>
+                Because I'm A Giant is an album that from its original
+                conception was ambitious in scope. It features 18 songs, was
+                recorded over a period of three and a half years between
+                2015-2018, and is the product of E. J. Mainwaring travelling
+                around the UK (mostly Liverpool) with a backpack full of
+                borrowed microphones to various musicians/friends houses to
+                track the parts he’d written. Although there's no overriding
+                concept to the album, Elijah was focussing on writing songs with
+                narratives and creating characters with rich personalities and
+                backgrounds. Its intent is an atmospheric and poignant journey
+                through the magnificent highs and the necessary lows of growing
+                up. E. J. Mainwaring weaves a plethora of musical styles from
+                indie, rock, folk, pop and incorporates over 25 different
+                acoustic/electric instruments with themes and emotions
+                everybody’s experienced at one point or another in their life.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-body nodisplay" data-modal="2">
+          <div class="modal-header">
+            <div class="album-modal-btns">
+              <button class="btn album-modal-btn">Stream</button>
+              <button class="btn album-modal-btn">Buy</button>
+            </div>
+            <div class="close-modal">
+              <ion-icon class="icon-mobile-nav" name="close"></ion-icon>
+            </div>
+          </div>
+
+          <div class="album grid--2-cols">
+            <div class="img-title-date">
+              <img
+                class="album-artwork-modal"
+                src="imgs/EJANDTN EP COVER 1.png"
+                alt="Elijah James And The Nightares Album Art of Live From Elevator Studios EP"
+              />
+              <div class="title-date">
+                <span class="album-title">Live From Elevator Studios</span>
+                <span class="album-date">September 9, 2017</span>
+              </div>
+            </div>
+            <div class="tracklist">
+              <h2>Tracklist:</h2>
+              <ol>
+                <li>Who'll Be Here Tomorrow?</li>
+                <li>Enough Rope</li>
+              </ol>
+            </div>
+
+            <div class="credits">
+              <h2>Credits</h2>
+              <ul>
+                <li>All songs written by E. J. Mainwaring</li>
+                <li>Vox/Acoustic Guitar - E. J. Mainwaring</li>
+                <li>Backing Vox/Electric Guitar - Simon Bill Gelling</li>
+                <li>
+                  Electric Guitar/Saxophone/Clarinet/Percussion/Keys - James
+                  Cudworth
+                </li>
+                <li>Bass - Matthew Kearon</li>
+                <li>Drums - Gareth Dawson</li>
+                <li>Piano/Keys - Nathaniel Gamsu</li>
+                <li>Violin - Emily Claire</li>
+                <li>Tenor Horn - Rachel Warton</li>
+                <li>Mixed by Tom Roach</li>
+                <li>Mastered by Tom Woodhead</li>
+              </ul>
+            </div>
+            <div class="desc-modal">
+              <p>
+                On June 10th 2017, Elijah James And The Nightmares stepped into
+                Elevator Studios with Tom Roach at the mixing desk to track
+                their first set of recordings as a band. Performing totally
+                live, the EP captures the energy, intensity and excitement
+                created by the eight piece, encapsulating their live sound.
+              </p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="video-section section-seperator" id="videos">
+        <h1 class="video-header">Videos</h1>
+        <div class="video-gallery grid--2-cols">
+          <div class="video-box">
+            <img
+              class="video-thumb"
+              src="imgs/BIAG-thumb.png"
+              alt="Thumbnail for Because I'm A Giant Video"
+            />
+            <ion-icon class="video-icon" name="play-circle-outline"></ion-icon>
+          </div>
+          <div class="video-box">
+            <img
+              class="video-thumb"
+              src="imgs/EP-thumb.png"
+              alt="Thumbnail for It's Too Late Now To Say: Two Songs EP Video"
+            /><ion-icon
+              class="video-icon"
+              name="play-circle-outline"
+            ></ion-icon>
+          </div>
+          <div class="video-box">
+            <img
+              class="video-thumb"
+              src="imgs/hate-it-here-thumb.png"
+              alt="Thumbnail for I Hate It Here But You Are Here And I Love You Single Video"
+            /><ion-icon
+              class="video-icon"
+              name="play-circle-outline"
+            ></ion-icon>
+          </div>
+          <div class="video-box">
+            <img
+              class="video-thumb"
+              src="imgs/on-a-stage-thumb.png"
+              alt="Thumbnail for On A Stage Single Video"
+            /><ion-icon
+              class="video-icon"
+              name="play-circle-outline"
+            ></ion-icon>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section container section-seperator" id="about">
+        <h1 class="about-header">About</h1>
+        <div class="about-body">
+          <img
+            class="promo-photo"
+            src="imgs/promophoto.jpeg"
+            alt="Promo photograph
       of Elijah James"
+          />
+          <p>
+            E. J. Mainwaring (the sole member of EJANDTN) writes captivating
+            songs, which are brought to life with his unique, rich baritone
+            vocal that conjures thoughts of Leonard Cohen and Scott Walker. A
+            singer and songwriter born in Liverpool, UK, his music errs on the
+            side of melancholia, whilst also still managing to provoke hopeful
+            and nostalgic imagery in the process. <br /><br />Usually
+            accompanied by a band of accomplished musicians weaving the
+            intricate instrumentation around his captivating narratives, James
+            studies and channels the foundations of songwriting and storytelling
+            laid out before him by the likes of Bob Dylan, Paul Simon and John
+            Lennon. With a passion for songwriting, his focus is mainly on
+            deeply thought-out, spellbinding lyrics and moving instrumentation
+            to deliver his unique style of song.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-section container section-seperator">
+        <h1 class="contact-header">Contact</h1>
+        <div class="contact-body grid--3-cols">
+          <div class="contact-items">
+            <h2>Bookings</h2>
+            <h3>Email:</h3>
+            <a class="link" href="#"
+              ><span class="contact-item">ejandtn@gmail.com</span></a
+            >
+          </div>
+          <div class="contact-items">
+            <h2>Press Kit</h2>
+            <a class="link" href="#"
+              ><span class="contact-item">Artist Bio</span></a
+            >
+            <a class="link" href="#"
+              ><span class="contact-item">Press Photo</span></a
+            >
+            <a class="link" href="#"
+              ><span class="contact-item">Album Mini</span></a
+            >
+          </div>
+          <div class="contact-items">
+            <h2>Connect</h2>
+            <a class="link" href="#"
+              ><span class="contact-item">Facebook</span></a
+            >
+            <a class="link" href="#"
+              ><span class="contact-item">Instagram</span></a
+            >
+            <a class="link" href="#"
+              ><span class="contact-item">Twitter</span></a
+            >
+            <a class="link" href="#"
+              ><span class="contact-item">YouTube</span></a
+            >
+            <a class="link" href="#"
+              ><span class="contact-item">Spotify</span></a
+            >
+            <a class="link" href="#"
+              ><span class="contact-item">Apple Music</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <img
+          src="imgs/ejandtn-logo.png"
+          alt="Elijah James And The Nightmares logo"
+          class="header-logo logo-footer"
         />
-        <p>
-          E. J. Mainwaring (the sole member of EJANDTN) writes captivating
-          songs, which are brought to life with his unique, rich baritone vocal
-          that conjures thoughts of Leonard Cohen and Scott Walker. A singer and
-          songwriter born in Liverpool, UK, his music errs on the side of
-          melancholia, whilst also still managing to provoke hopeful and
-          nostalgic imagery in the process. <br /><br />Usually accompanied by a
-          band of accomplished musicians weaving the intricate instrumentation
-          around his captivating narratives, James studies and channels the
-          foundations of songwriting and storytelling laid out before him by the
-          likes of Bob Dylan, Paul Simon and John Lennon. With a passion for
-          songwriting, his focus is mainly on deeply thought-out, spellbinding
-          lyrics and moving instrumentation to deliver his unique style of song.
-        </p>
-      </div>
-    </section>
-
-    <section class="contact-section container section-seperator">
-      <h1 class="contact-header">Contact</h1>
-      <div class="contact-body grid--3-cols">
-        <div class="contact-items">
-          <h2>Bookings</h2>
-          <h3>Email:</h3>
-          <a class="link" href="#"
-            ><span class="contact-item">ejandtn@gmail.com</span></a
-          >
-        </div>
-        <div class="contact-items">
-          <h2>Press Kit</h2>
-          <a class="link" href="#"
-            ><span class="contact-item">Artist Bio</span></a
-          >
-          <a class="link" href="#"
-            ><span class="contact-item">Press Photo</span></a
-          >
-          <a class="link" href="#"
-            ><span class="contact-item">Album Mini</span></a
-          >
-        </div>
-        <div class="contact-items">
-          <h2>Connect</h2>
-          <a class="link" href="#"
-            ><span class="contact-item">Facebook</span></a
-          >
-          <a class="link" href="#"
-            ><span class="contact-item">Instagram</span></a
-          >
-          <a class="link" href="#"><span class="contact-item">Twitter</span></a>
-          <a class="link" href="#"><span class="contact-item">YouTube</span></a>
-          <a class="link" href="#"><span class="contact-item">Spotify</span></a>
-          <a class="link" href="#"
-            ><span class="contact-item">Apple Music</span></a
-          >
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <img
-        src="imgs/ejandtn-logo.png"
-        alt="Elijah James And The Nightmares logo"
-        class="header-logo logo-footer"
-      />
-      <span
-        >All Right Reserved Elijah James And The Nightmares &copy; 2022</span
-      >
-    </footer>
-
+        <span
+          ><a
+            class="link"
+            href="https://github.com/dreamingOfSoy/ejandtn-website"
+            target="_blank"
+            rel="noreferrer noopener"
+            >Built using HTML, CSS, & vanilla Javascript by E. J. Mainwaring</a
+          ><br /><br />All Right Reserved Elijah James And The Nightmares &copy;
+          <span class="copy-date">2022</span></span
+        >
+      </footer>
+    </div>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
