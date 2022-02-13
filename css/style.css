@@ -484,14 +484,14 @@ MUSIC MODAL SECTION
   gap: 2rem;
 }
 
-.close-modal {
-  justify-self: flex-start;
-  cursor: pointer;
-}
-
 .album-modal-btn {
   width: 20%;
   border: 0.2rem solid;
+}
+
+.close-modal {
+  justify-self: flex-start;
+  cursor: pointer;
 }
 
 .album {
@@ -513,8 +513,22 @@ MUSIC MODAL SECTION
 
 .tracklist ol {
   margin-left: 2.6rem;
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 3rem;
+}
+
+.tracklist ol span {
+  color: #6e94ce;
+  margin-left: -2.6rem;
+  font-size: 2rem;
+  line-height: 4rem;
+}
+
+.img-title-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .title-date {
@@ -539,40 +553,33 @@ MUSIC MODAL SECTION
 
 .credits ul {
   list-style: none;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 3rem;
 }
 
-.desc {
-  grid-column: 1/3;
-}
-
-.desc p {
+.desc-modal {
   width: 100%;
   padding: 2rem;
-  font-size: 2rem;
-  line-height: 2.8rem;
-}
-
-.desc-modal {
   grid-column: 1/2;
   grid-row: 2/3;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .desc-modal p {
-  width: 100%;
-  padding: 2rem;
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 2.8rem;
 }
 
-.desc a:link,
-.desc a:visited {
-  color: inherit;
+.desc-modal a:link,
+.desc-modal a:visited {
+  color: #f0f2e6;
 }
 
-.desc a:hover,
-.desc a:active {
+.desc-modal a:hover,
+.desc-modal a:active {
   color: #6e94ce;
 }
 
@@ -616,6 +623,55 @@ VIDEO SECTION
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* Video Modal */
+
+.video-modal {
+  padding: 6rem;
+  background-color: #f0f2e66b;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.close-video-modal {
+  position: absolute;
+  top: -4rem;
+  right: -4rem;
+  cursor: pointer;
+  background-color: #090d16;
+}
+
+.close-video-icon {
+  color: inherit;
+}
+
+.video-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video {
+  height: 95%;
+  width: 95%;
 }
 
 /*

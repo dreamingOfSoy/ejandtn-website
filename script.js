@@ -82,6 +82,7 @@ btnMobNav.addEventListener('click', function () {
 // Making Modal Work
 /* ////////////////////////////////////// */
 
+// Album Modal
 const [...albumArtwork] = document.querySelectorAll('.art-box');
 const [...modals] = document.querySelectorAll('.modal-body');
 const modalContainer = document.querySelector('.album-modal');
@@ -97,6 +98,25 @@ albumArtwork.forEach(artwork => {
       // For each modal, determine is the dataset matches the image that was clicked in order to load the correct model.
       if (albumNum === +modal.dataset.modal) {
         modalContainer.classList.remove('nodisplay');
+        modal.classList.remove('nodisplay');
+      }
+    });
+  });
+});
+
+//Video Modal
+const [...videoArtwork] = document.querySelectorAll('.video-box');
+const [...videoModals] = document.querySelectorAll('.video-container');
+const videoContainer = document.querySelector('.video-modal');
+
+videoArtwork.forEach(video => {
+  console.log(video);
+  video.addEventListener('click', function () {
+    const videoNum = videoArtwork.findIndex(index => index === video);
+    console.log(videoNum);
+    videoModals.forEach(modal => {
+      if (videoNum === +modal.dataset.video) {
+        videoContainer.classList.remove('nodisplay');
         modal.classList.remove('nodisplay');
       }
     });

@@ -70,6 +70,30 @@
   .nav-open .icon-mobile-nav[name='menu-outline'] {
     display: none;
   }
+
+  .album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .album .img-title-date {
+    order: 2;
+  }
+
+  .tracklist {
+    order: 2;
+  }
+
+  .album .desc-modal {
+    order: 2;
+  }
+
+  .album .credits {
+    order: 3;
+  }
 }
 
 @media (max-width: 51em) {
@@ -147,6 +171,21 @@
     width: 20rem;
   }
 
+  .modal-body {
+    width: 95%;
+    padding: 2rem;
+  }
+
+  .album-modal-btn {
+    width: 40%;
+    border: 0.2rem solid;
+  }
+
+  .album-artwork-modal {
+    margin: 0 auto;
+    width: 30rem;
+  }
+
   .about-body {
     display: flex;
     flex-direction: column;
@@ -219,6 +258,14 @@ FOR MOBILE
     margin: 4rem auto;
   }
 
+  .modal-body {
+    padding: 2rem;
+  }
+
+  .album-modal-btn {
+    width: 30%;
+  }
+
   .about-body p {
     font-size: 1.6rem;
   }
@@ -276,6 +323,36 @@ FOR MOBILE
     width: 100%;
   }
 
+  .modal-body {
+    width: 100%;
+  }
+
+  .close-modal-icon {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .tracklist ol {
+    font-size: 1.4rem;
+  }
+
+  .tracklist ol span {
+    font-size: 1.6rem;
+  }
+
+  .desc-modal p {
+    font-size: 1.4rem;
+  }
+
+  .album-modal-btn {
+    width: 40%;
+  }
+
+  .album-artwork-modal {
+    margin: 0 auto;
+    width: 25rem;
+  }
+
   .promo-photo {
     width: 26rem;
   }
@@ -329,6 +406,10 @@ FOR MOBILE
 
   .music-section {
     padding: 6.4rem 6rem 6.4rem 6rem;
+  }
+
+  .modal-body {
+    width: 100%;
   }
 
   .btn {
