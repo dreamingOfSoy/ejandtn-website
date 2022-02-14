@@ -86,17 +86,20 @@ btnMobNav.addEventListener('click', function () {
 const [...albumArtwork] = document.querySelectorAll('.art-box');
 const [...modals] = document.querySelectorAll('.modal-body');
 const modalContainer = document.querySelector('.album-modal');
+const container = document.querySelector('html');
 
 // Loops over an array of elements.
 albumArtwork.forEach(artwork => {
   // For each element, it adds an event listener.
-  artwork.addEventListener('click', function () {
+  artwork.addEventListener('click', function (e) {
+    e.preventDefault();
     // Using findIndex to return the number the element is in the array.
     const albumNum = albumArtwork.findIndex(index => index === artwork);
     // Loops over all the available modals (a different modal for each album)
     modals.forEach(modal => {
       // For each modal, determine is the dataset matches the image that was clicked in order to load the correct model.
       if (albumNum === +modal.dataset.modal) {
+        container.classList.add('nooverflow');
         modalContainer.classList.remove('nodisplay');
         modal.classList.remove('nodisplay');
       }
@@ -110,12 +113,12 @@ const [...videoModals] = document.querySelectorAll('.video-container');
 const videoContainer = document.querySelector('.video-modal');
 
 videoArtwork.forEach(video => {
-  console.log(video);
   video.addEventListener('click', function () {
     const videoNum = videoArtwork.findIndex(index => index === video);
     console.log(videoNum);
     videoModals.forEach(modal => {
       if (videoNum === +modal.dataset.video) {
+        container.classList.add('nooverflow');
         videoContainer.classList.remove('nodisplay');
         modal.classList.remove('nodisplay');
       }
@@ -128,19 +131,48 @@ videoArtwork.forEach(video => {
 /* ////////////////////////////////////// */
 
 const closeModal = document.querySelectorAll('.close-modal');
+const [...video] = document.querySelectorAll('.video');
+const [...youtubeVid] = document.querySelectorAll('.youtube-video');
+
+// Pause Youtube
+
+closeModal.forEach(close =>
+  close.addEventListener('click', function () {
+    youtubeVid.forEach(vid =>
+      vid.contentWindow.postMessage(
+        '{"event":"command","func":"' + 'pauseVideo' + '","args":""}',
+        '*'
+      )
+    );
+  })
+);
 
 // Click the X on each modal to close the modal.
 closeModal.forEach(close =>
   close.addEventListener('click', function () {
+    container.classList.remove('nooverflow');
+    // For album art
     modalContainer.classList.add('nodisplay');
     modals.forEach(modal => modal.classList.add('nodisplay'));
+    // For video
+    videoContainer.classList.add('nodisplay');
+    videoModals.forEach(modal => modal.classList.add('nodisplay'));
   })
 );
 
 // Click outside of modal body (the fades part) to exit modal as well as click the X.
 modalContainer.addEventListener('click', function (e) {
   if (e.target === modalContainer) {
+    container.classList.remove('nooverflow');
     modalContainer.classList.add('nodisplay');
     modals.forEach(modal => modal.classList.add('nodisplay'));
+  }
+});
+
+videoContainer.addEventListener('click', function (e) {
+  if (e.target === videoContainer) {
+    container.classList.remove('nooverflow');
+    videoContainer.classList.add('nodisplay');
+    videoModals.forEach(modal => modal.classList.add('nodisplay'));
   }
 });

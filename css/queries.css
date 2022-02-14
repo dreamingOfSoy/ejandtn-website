@@ -238,10 +238,15 @@ FOR MOBILE
     width: 34rem;
     cursor: pointer;
   }
+
   .nav-pages li {
     font-size: 1.8rem;
     text-transform: uppercase;
     cursor: pointer;
+  }
+
+  .bit-widget-container {
+    align-self: center;
   }
 
   .icon {

@@ -113,6 +113,7 @@ HEADER/HERO SECTION
 
 .container {
   margin: 0 auto;
+  height: 100%;
 }
 
 header {
@@ -122,7 +123,7 @@ header {
       rgba(34, 34, 34, 0.3),
       rgba(34, 34, 34, 0.3)
     ),
-    url(../imgs/Because\ im\ a\ giantai-art\ only\ 2.jpg);
+    url(../imgs/Because-im-a-giantai-art-only-2-reduce.jpg);
   background-position: center center;
   background-size: cover;
 }
@@ -393,8 +394,22 @@ TOUR SECTION
   text-align: center;
 }
 
-.bit-widget-container {
-  align-self: center;
+.bit-widget .bit-no-dates-container .bit-track-button {
+  background-color: transparent;
+  color: #f0f2e6;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  padding: 1rem 1rem;
+  border: 0.2rem solid #f0f2e6;
+
+  transition: all 0.3s;
+}
+
+.bit-widget .bit-no-dates-container .bit-track-button:hover {
+  padding: 1rem 4.8rem;
+  color: #090d16;
+  background-color: #f0f2e6;
+  border: 0.2rem solid #f0f2e6;
 }
 
 /*
@@ -669,7 +684,7 @@ VIDEO SECTION
   justify-content: center;
 }
 
-.video {
+.youtube-video {
   height: 95%;
   width: 95%;
 }
@@ -778,4 +793,8 @@ IMPORTANT
 
 .nodisplay {
   display: none !important;
+}
+
+.nooverflow {
+  overflow: hidden !important;
 }
