@@ -176,9 +176,8 @@
     padding: 2rem;
   }
 
-  .album-modal-btn {
+  .album-modal-btns a {
     width: 40%;
-    border: 0.2rem solid;
   }
 
   .album-artwork-modal {
@@ -267,7 +266,7 @@ FOR MOBILE
     padding: 2rem;
   }
 
-  .album-modal-btn {
+  .album-modal-btns a {
     width: 30%;
   }
 
@@ -349,7 +348,7 @@ FOR MOBILE
     font-size: 1.4rem;
   }
 
-  .album-modal-btn {
+  .album-modal-btns a {
     width: 40%;
   }
 
