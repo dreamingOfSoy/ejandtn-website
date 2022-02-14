@@ -499,8 +499,12 @@ MUSIC MODAL SECTION
   gap: 2rem;
 }
 
-.album-modal-btn {
+.album-modal-btns a {
   width: 20%;
+}
+
+.album-modal-btn {
+  width: 100%;
   border: 0.2rem solid;
 }
 
