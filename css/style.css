@@ -43,6 +43,10 @@ h3 {
   font-size: 2rem;
 }
 
+p {
+  font-size: 1.2rem;
+}
+
 .link:link,
 .link:visited {
   display: inline-block;
@@ -444,6 +448,11 @@ MUSIC SECTION
 .album-title {
   font-size: 2rem;
   text-align: center;
+}
+
+.music-section-desc {
+  text-align: center;
+  margin-top: -2rem;
 }
 
 .album-date {

@@ -79,8 +79,16 @@
     gap: 2rem;
   }
 
+  .album-title {
+    font-size: 1.8rem;
+  }
+
   .album .img-title-date {
     order: 2;
+  }
+
+  .album-modal-btns a {
+    width: 30%;
   }
 
   .tracklist {
@@ -267,7 +275,7 @@ FOR MOBILE
   }
 
   .album-modal-btns a {
-    width: 30%;
+    width: 40%;
   }
 
   .about-body p {
@@ -325,6 +333,10 @@ FOR MOBILE
 
   .album-artwork {
     width: 100%;
+  }
+
+  .album-modal {
+    padding: 6rem 3rem 6rem 3rem;
   }
 
   .modal-body {
@@ -410,6 +422,10 @@ FOR MOBILE
 
   .music-section {
     padding: 6.4rem 6rem 6.4rem 6rem;
+  }
+
+  .album-modal {
+    padding: 6rem 3rem 6rem 3rem;
   }
 
   .modal-body {

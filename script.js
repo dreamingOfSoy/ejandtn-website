@@ -6,9 +6,22 @@ const navLinks = document.querySelectorAll('.link-scroll');
 const header = document.querySelector('.header');
 const stickyNav = document.querySelector('.sticky-nav');
 const stickyNavHeight = document.querySelector('.sticky-nav').offsetHeight;
+const btnMobNav = document.querySelector('.btn-mobile-nav');
+const [...albumArtwork] = document.querySelectorAll('.art-box');
+const [...modals] = document.querySelectorAll('.modal-body');
+const modalContainer = document.querySelector('.album-modal');
+const albumGallery = document.querySelector('.album-gallery');
+const container = document.querySelector('html');
+const [...videoArtwork] = document.querySelectorAll('.video-box');
+const [...videoModals] = document.querySelectorAll('.video-container');
+const videoGallery = document.querySelector('.video-gallery');
+const videoContainer = document.querySelector('.video-modal');
+const closeModal = document.querySelectorAll('.close-modal');
+const [...video] = document.querySelectorAll('.video');
+const [...youtubeVid] = document.querySelectorAll('.youtube-video');
 
 /* ////////////////////////////////////// */
-// Keep date in footer up to date
+// Keep year in footer up to date
 /* ////////////////////////////////////// */
 const date = new Date();
 const year = date.getFullYear();
@@ -18,62 +31,66 @@ copyrightDate.textContent = year;
 // Smooth Scrolling
 /* ////////////////////////////////////// */
 // Loops over the nodelist.
-navLinks.forEach(link => {
-  function scrollToElement(e) {
-    e.preventDefault();
 
-    // Returns the value in the href of the anchor element, such as #music.
-    const href = link.getAttribute('href');
+function scrollToElement(e) {
+  e.preventDefault();
 
-    // If href on anchor is just # (the default) it will scroll to the top of the page. Useful for clicking logo to return to top.
-    if (href === '#') {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-      return;
-    }
+  // Returns the value in the href of the anchor element, such as #music.
+  const href = this.getAttribute('href');
 
-    // Uses the returned href, such as #music, and utilises that this is how you also select ID's using querySelector to select the correct section to scroll to.
-    const element = document.querySelector(href);
-    // Uses this element to calculate the current position of the top of the element.
-    const elementPosition = element.getBoundingClientRect().top;
-    // Caculates the correct position to scroll to. (window.pageYOffset must be used here so that the current location of the viewport from the top of the page can be offset depending on how many pixels the scrolling moved. For example, if the page is scrolled down 200px and the element to scroll to is -100px away, -100px, is lower than 0, so this will force a scroll of the top of the page, the pageYOffset, here, will then add the offset, which will be 200px back on, resulting in 100px, the correct location of the scroll).
-    const scrollTo = elementPosition + window.pageYOffset - stickyNavHeight;
-
-    if (href !== '#' && href.startsWith('#')) {
-      window.scrollTo({
-        top: scrollTo,
-        behavior: 'smooth',
-      });
-    }
-
-    if (stickyNav.classList.contains('nav-open')) {
-      stickyNav.classList.toggle('nav-open');
-    }
+  // If href on anchor is just # (the default) it will scroll to the top of the page. Useful for clicking logo to return to top.
+  if (href === '#') {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    return;
   }
-  // For each link it find the href and applies smooth scrolling to it.
-  link.addEventListener('click', scrollToElement);
-});
+
+  // Uses the returned href, such as #music, and utilises that this is how you also select ID's using querySelector to select the correct section to scroll to.
+  const element = document.querySelector(href);
+  // Uses this element to calculate the current position of the top of the element.
+  const elementPosition = element.getBoundingClientRect().top;
+  // Caculates the correct position to scroll to. (window.pageYOffset must be used here so that the current location of the viewport from the top of the page can be offset depending on how many pixels the scrolling moved. For example, if the page is scrolled down 200px and the element to scroll to is -100px away, -100px, is lower than 0, so this will force a scroll of the top of the page, the pageYOffset, here, will then add the offset, which will be 200px back on, resulting in 100px, the correct location of the scroll).
+  const scrollTo = elementPosition + window.pageYOffset - stickyNavHeight;
+
+  // If href on anchor is not just # but also starts with # (which is also you select ID's) and then scrolls to the specified location calculated by scrollTo, with a 'smooth' behaviour.
+  if (href !== '#' && href.startsWith('#')) {
+    window.scrollTo({
+      top: scrollTo,
+      behavior: 'smooth',
+    });
+  }
+
+  // This makes the mobile nav bar work, so that when you click a link in the mobile nav, it closes the nav so it's not in the way. (The nav-open class is in a media query as it only need to work when in mobile view).
+  if (stickyNav.classList.contains('nav-open')) {
+    stickyNav.classList.toggle('nav-open');
+  }
+}
 
 /* ////////////////////////////////////// */
 // Making Nav Sticky
 /* ////////////////////////////////////// */
-const headerObserver = new IntersectionObserver(function (entries) {
-  const [entry] = entries;
-  entry.isIntersecting === false
-    ? stickyNav.classList.add('display')
-    : stickyNav.classList.remove('display'),
-    { root: null, threshold: 0, rootMargin: `-${stickyNavHeight}px` };
-});
 
+// Creates an observer to calculate when to show or remove the sticky nav.
+const headerObserver = new IntersectionObserver(
+  function (entries) {
+    const [entry] = entries;
+    entry.isIntersecting === false
+      ? stickyNav.classList.add('display')
+      : stickyNav.classList.remove('display');
+  },
+  { root: null, threshold: 0, rootMargin: `-${stickyNavHeight}px` }
+);
+
+// Calls the observe method on the observer with the desired element to observe.
 headerObserver.observe(header);
 
 /* ////////////////////////////////////// */
 // Making Mobile Nav Work
 /* ////////////////////////////////////// */
 
-const btnMobNav = document.querySelector('.btn-mobile-nav');
+// Adds and removes a class to show and hide the mobile nav bar when in mobile view.
 btnMobNav.addEventListener('click', function () {
   stickyNav.classList.toggle('nav-open');
 });
@@ -82,97 +99,86 @@ btnMobNav.addEventListener('click', function () {
 // Making Modal Work
 /* ////////////////////////////////////// */
 
+// Function that takes an array and returns the matched value.
+function findIndex(arr, value) {
+  return arr.findIndex(index => index === value);
+}
+
+// Function that determine if a value matches another and applies/removes classes.
+function matchNumbers(valOne, valTwo, elementOne, elementTwo) {
+  if (valOne === valTwo) {
+    container.classList.add('nooverflow');
+    elementTwo.classList.remove('nodisplay');
+    elementOne.classList.remove('nodisplay');
+  }
+}
+
 // Album Modal
-const [...albumArtwork] = document.querySelectorAll('.art-box');
-const [...modals] = document.querySelectorAll('.modal-body');
-const modalContainer = document.querySelector('.album-modal');
-const container = document.querySelector('html');
+// Opens Modal
+function openAlbumModal(e) {
+  console.log(e);
+  e.preventDefault();
+  // Using findIndex to return the number the element is in the array.
+  const albumNum = findIndex(albumArtwork, this);
+  const videoNum = findIndex(videoArtwork, this);
 
-// Loops over an array of elements.
-albumArtwork.forEach(artwork => {
-  // For each element, it adds an event listener.
-  artwork.addEventListener('click', function (e) {
-    e.preventDefault();
-    // Using findIndex to return the number the element is in the array.
-    const albumNum = albumArtwork.findIndex(index => index === artwork);
+  if (e.target.closest('.album-gallery') === albumGallery)
     // Loops over all the available modals (a different modal for each album)
-    modals.forEach(modal => {
-      // For each modal, determine is the dataset matches the image that was clicked in order to load the correct model.
-      if (albumNum === +modal.dataset.modal) {
-        container.classList.add('nooverflow');
-        modalContainer.classList.remove('nodisplay');
-        modal.classList.remove('nodisplay');
-      }
-    });
-  });
-});
+    modals.forEach(modal =>
+      // For each modal, determine if the dataset matches the image that was clicked in order to load the correct model.
+      matchNumbers(albumNum, +modal.dataset.modal, modal, modalContainer)
+    );
 
-//Video Modal
-const [...videoArtwork] = document.querySelectorAll('.video-box');
-const [...videoModals] = document.querySelectorAll('.video-container');
-const videoContainer = document.querySelector('.video-modal');
-
-videoArtwork.forEach(video => {
-  video.addEventListener('click', function () {
-    const videoNum = videoArtwork.findIndex(index => index === video);
-    console.log(videoNum);
-    videoModals.forEach(modal => {
-      if (videoNum === +modal.dataset.video) {
-        container.classList.add('nooverflow');
-        videoContainer.classList.remove('nodisplay');
-        modal.classList.remove('nodisplay');
-      }
-    });
-  });
-});
+  if (e.target.closest('.video-gallery') === videoGallery)
+    videoModals.forEach(modal =>
+      matchNumbers(videoNum, +modal.dataset.video, modal, videoContainer)
+    );
+}
 
 /* ////////////////////////////////////// */
 // Making Modal Close
 /* ////////////////////////////////////// */
 
-const closeModal = document.querySelectorAll('.close-modal');
-const [...video] = document.querySelectorAll('.video');
-const [...youtubeVid] = document.querySelectorAll('.youtube-video');
+function displayNone(element, arr) {
+  element.classList.add('nodisplay');
+  arr.forEach(el => el.classList.add('nodisplay'));
+}
 
-// Pause Youtube
-
-closeModal.forEach(close =>
-  close.addEventListener('click', function () {
-    youtubeVid.forEach(vid =>
-      vid.contentWindow.postMessage(
-        '{"event":"command","func":"' + 'pauseVideo' + '","args":""}',
-        '*'
-      )
-    );
-  })
-);
+const stopScroll = el => el.classList.remove('nooverflow');
 
 // Click the X on each modal to close the modal.
-closeModal.forEach(close =>
-  close.addEventListener('click', function () {
-    container.classList.remove('nooverflow');
-    // For album art
-    modalContainer.classList.add('nodisplay');
-    modals.forEach(modal => modal.classList.add('nodisplay'));
-    // For video
-    videoContainer.classList.add('nodisplay');
-    videoModals.forEach(modal => modal.classList.add('nodisplay'));
-  })
+function xClosesModal() {
+  // Stop scrolling when modal open
+  stopScroll(container);
+  // For album art
+  displayNone(modalContainer, modals);
+  // For YouTube video
+  displayNone(videoContainer, videoModals);
+  // Pause YouTube video
+  youtubeVid.forEach(vid =>
+    vid.contentWindow.postMessage(
+      '{"event":"command","func":"' + 'pauseVideo' + '","args":""}',
+      '*'
+    )
+  );
+}
+
+// Click outside of modal body (the faded part) to exit modal as well as click the X.
+function overlayClosesModal(e) {
+  if (e.target === this) {
+    stopScroll(container);
+    displayNone(this, modals);
+  }
+}
+
+// Event Handlers
+navLinks.forEach(link => link.addEventListener('click', scrollToElement));
+albumArtwork.forEach(artwork =>
+  artwork.addEventListener('click', openAlbumModal)
 );
-
-// Click outside of modal body (the fades part) to exit modal as well as click the X.
-modalContainer.addEventListener('click', function (e) {
-  if (e.target === modalContainer) {
-    container.classList.remove('nooverflow');
-    modalContainer.classList.add('nodisplay');
-    modals.forEach(modal => modal.classList.add('nodisplay'));
-  }
+videoArtwork.forEach(video => {
+  video.addEventListener('click', openAlbumModal);
 });
-
-videoContainer.addEventListener('click', function (e) {
-  if (e.target === videoContainer) {
-    container.classList.remove('nooverflow');
-    videoContainer.classList.add('nodisplay');
-    videoModals.forEach(modal => modal.classList.add('nodisplay'));
-  }
-});
+modalContainer.addEventListener('click', overlayClosesModal);
+videoContainer.addEventListener('click', overlayClosesModal);
+closeModal.forEach(close => close.addEventListener('click', xClosesModal));
