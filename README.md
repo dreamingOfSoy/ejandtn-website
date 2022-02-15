@@ -12,6 +12,6 @@ I used JavaScript to impliment various funcional aspects of the side, such as au
 
 Having only been coding for 11 weeks, I feel this was a huge lesson in the basics of HTML and CSS, as well as advanced DOM manipulation.
 
-I also made an effort to refactor my Javascript to keep it dry and readable.
+I also made an effort to refactor my JavaScript to keep it dry and readable.
 
 E. J. Mainwaring - 15/02/2022
