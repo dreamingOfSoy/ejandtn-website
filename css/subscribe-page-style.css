@@ -1,0 +1,153 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.4rem #6e94ce;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  background-color: #090d16;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  color: #f0f2e6;
+}
+
+h1 {
+  font-family: 'rockwell', sans-serif;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+h2 {
+  font-family: 'rockwell', sans-serif;
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+}
+
+.link,
+.link:link,
+.link:visited {
+  padding: 0.6rem;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  border: 0.2rem solid #f0f2e6;
+
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  text-decoration: none;
+  color: #6e95ce;
+  transform: scale(1.05);
+  cursor: pointer;
+  border: 0.2rem solid #6e95ce;
+}
+
+.btn,
+.btn:link,
+.btn:active {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1.8rem;
+  padding: 1.2rem;
+  border: none;
+  background-color: transparent;
+  color: #f0f2e6;
+  border: 0.2rem solid #f0f2e6;
+  cursor: pointer;
+
+  position: relative;
+
+  transition: all 0.3s;
+}
+
+.btn:hover,
+.btn:visited {
+  transform: scale(1.05);
+  background-color: #f0f2e6;
+  color: #090d16;
+}
+
+.container {
+  margin: 0 auto;
+  margin-top: 2.4rem;
+  max-width: 55rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.return-link {
+  font-size: 1.2rem;
+  align-self: flex-start;
+}
+
+.title {
+  align-self: flex-start;
+}
+
+.header-logo {
+  width: 38rem;
+}
+
+.subscribe-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-bottom: 2.4rem;
+}
+
+.subscribe-form {
+  width: 100%;
+}
+
+li {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.4rem;
+}
+
+.form-input {
+  height: 3.5rem;
+  width: 100%;
+
+  padding: 1rem;
+  font-size: 2rem;
+}

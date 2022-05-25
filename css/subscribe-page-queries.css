@@ -1,0 +1,27 @@
+@media (max-width: 27em) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .container {
+    margin: 0 auto;
+    margin-top: 2.4rem;
+    max-width: 30rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .form-input {
+    height: 2rem;
+  }
+}
