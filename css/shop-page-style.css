@@ -296,6 +296,13 @@ SHOP SECTION
   gap: 2rem;
 }
 
+.privacy-policy-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
 .hidden {
   display: none;
 }
