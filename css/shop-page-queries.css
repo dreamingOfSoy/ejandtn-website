@@ -1,0 +1,175 @@
+@media (max-width: 42em) {
+  .container {
+    max-width: 54rem;
+  }
+
+  .shop-nav {
+    font-size: 1.6rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .product-title {
+    font-size: 1.8rem;
+  }
+
+  .product-img {
+    width: 24rem;
+  }
+
+  .product-description {
+    font-size: 1.2rem;
+  }
+
+  .product-shipping {
+    font-size: 1rem;
+  }
+
+  .product-price {
+    font-size: 1.8rem;
+  }
+
+  .logo-footer {
+    width: 16rem;
+  }
+
+  .footer-links {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 36em) {
+  .container {
+    max-width: 44rem;
+  }
+
+  .redirect-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .redirect-link {
+    font-size: 1.2rem;
+    align-self: center;
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .product-title {
+    text-align: center;
+  }
+
+  .product-description {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+
+  .product-price {
+    font-size: 2rem;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .logo-footer {
+    width: 18rem;
+  }
+
+  .footer-links {
+    font-size: 1.3rem;
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 27em) {
+  .container {
+    max-width: 36rem;
+  }
+
+  .header-logo {
+    width: 32rem;
+  }
+
+  .redirect-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .redirect-link {
+    font-size: 1.2rem;
+    align-self: center;
+  }
+
+  .icon {
+    width: 2.4rem;
+  }
+
+  .shop-description {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+  }
+
+  .shop-nav {
+    font-size: 1.4rem;
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-title {
+    text-align: center;
+  }
+
+  .product-description {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+
+  .product-price {
+    font-size: 2rem;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .logo-footer {
+    width: 18rem;
+  }
+
+  .footer-links {
+    font-size: 1.3rem;
+    gap: 1.2rem;
+  }
+
+  .back-to-top {
+    height: 4rem;
+
+    position: fixed;
+    right: 12px;
+    top: 12px;
+  }
+}

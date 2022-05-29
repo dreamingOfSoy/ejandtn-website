@@ -54,7 +54,7 @@ function scrollToElement(e) {
   // Caculates the correct position to scroll to. (window.pageYOffset must be used here so that the current location of the viewport from the top of the page can be offset depending on how many pixels the scrolling moved. For example, if the page is scrolled down 200px and the element to scroll to is -100px away, -100px, is lower than 0, so this will force a scroll of the top of the page, the pageYOffset, here, will then add the offset, which will be 200px back on, resulting in 100px, the correct location of the scroll).
   const scrollTo = elementPosition + window.pageYOffset - stickyNavHeight;
 
-  // If href on anchor is not just # but also starts with # (which is also you select ID's) and then scrolls to the specified location calculated by scrollTo, with a 'smooth' behaviour.
+  // If href on anchor is not just # but also starts with # (which is also how you select ID's) and then scrolls to the specified location calculated by scrollTo, with a 'smooth' behaviour.
   if (href !== '#' && href.startsWith('#')) {
     window.scrollTo({
       top: scrollTo,
