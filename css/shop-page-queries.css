@@ -172,4 +172,12 @@
     right: 12px;
     top: 12px;
   }
+
+  .WordSection1 {
+    max-width: 32rem;
+  }
+
+  .MsoNormalTable {
+    width: 20rem;
+  }
 }
