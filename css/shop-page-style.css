@@ -33,6 +33,12 @@ h1 {
 
 h2 {
   font-family: 'rockwell', sans-serif;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: 'rockwell', sans-serif;
   font-size: 2.2rem;
 }
 
@@ -232,7 +238,7 @@ SHOP SECTION
   justify-self: center;
 }
 
-.paypal-btn {
+.add-to-cart-btn {
   grid-column: 1/3;
   grid-row: 4/5;
   justify-self: center;
@@ -294,6 +300,11 @@ SHOP SECTION
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.WordSection1 li {
+  font-size: 1.4rem;
+  margin-left: 1.2rem;
 }
 
 .privacy-policy-body {
